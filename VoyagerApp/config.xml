@@ -107,4 +107,5 @@
     <splash src="res/screens/wp8/SplashScreenImage.png" width="768" height="1280" />
   </platform>
   <plugin name="cordova-plugin-inappbrowser" version="1.6.1" />
+  <plugin name="cordova-sqlite-storage" version="2.0.1" />
 </widget>
