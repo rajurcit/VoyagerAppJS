@@ -1,5 +1,13 @@
-﻿<div class="jumbotron text-center">
-    <h1>About Page</h1>
-
-    <p>{{ message }}</p>
-</div>
+﻿ <h1>New Products</h1>
+    <div ng-repeat="item in productDetails">
+        <ul>             
+            <li>
+                ID: {{item.ProductId}}<br />
+                ProductName: {{item.ProductName}}<br />
+                <a href="#/ProductDeatils/{{item.ProductId}}">
+                    <img src="http://staging.sirez.com/babyhugzshopping/BhzImages/Products/small/{{item.ProductImage}}" alt="{{item.ProductImage}}" />
+                </a>
+            </li>
+        </ul>
+    </div>
+ 

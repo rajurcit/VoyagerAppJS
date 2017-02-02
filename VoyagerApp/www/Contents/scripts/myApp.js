@@ -6,5 +6,4 @@ myApp.controller('CalculatorController', function ($scope, Calculator, Dbinfo) {
         $scope.answer = Calculator.square($scope.number);
         $scope.add = Calculator.add($scope.number);
     }
-
 });

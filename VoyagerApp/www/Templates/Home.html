@@ -1,5 +1,38 @@
-﻿<div class="jumbotron text-center">
-    <h1>Home Page</h1>
-
-    <p>{{ message }}</p>
+﻿<div class="">
+    <h2>FeaturedProducts</h2>
+    <div ng-repeat="ProductList in GetHomeProductList.FeaturedProducts">
+         <ul>
+            <li>
+                ID: {{ProductList.ProductId}}<br />
+                ProductName: {{ProductList.ProductName}}<br />
+                <a href="#/ProductDeatils/{{ProductList.ProductId}}">
+                    <img src="http://staging.sirez.com/babyhugzshopping/BhzImages/Products/small/{{ProductList.ProductImage}}" alt="{{ProductList.ProductImage}}" />
+                </a>
+            </li>
+        </ul> 
+    </div>   
+    <h2>New ArrivalProducts</h2>
+    <div ng-repeat="ProductList in GetHomeProductList.NewArrivalProducts">
+        <ul>
+            <li>
+                ID: {{ProductList.ProductId}}<br />
+                ProductName: {{ProductList.ProductName}}<br />
+                <a href="#/ProductDeatils/{{ProductList.ProductId}}">
+                    <img src="http://staging.sirez.com/babyhugzshopping/BhzImages/Products/small/{{ProductList.ProductImage}}" alt="{{ProductList.ProductImage}}" />
+                </a>
+            </li>
+        </ul>
+    </div>   
+    <h2>HotProducts</h2>
+    <div ng-repeat="ProductList in GetHomeProductList.HotProducts">
+        <ul>
+            <li>
+                ID: {{ProductList.ProductId}}<br />
+                ProductName: {{ProductList.ProductName}}<br />
+                <a href="#/ProductDeatils/{{ProductList.ProductId}}">
+                    <img src="http://staging.sirez.com/babyhugzshopping/BhzImages/Products/small/{{ProductList.ProductImage}}" alt="{{ProductList.ProductImage}}" />
+                </a>
+            </li>
+        </ul>
+    </div> 
 </div>

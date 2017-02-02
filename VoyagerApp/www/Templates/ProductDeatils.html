@@ -1,0 +1,18 @@
+﻿<div><h1>Product Details</h1></div>
+
+<div> Id: {{ProductId}} </div>
+<div> SalePrice: {{SalePrice}} </div>
+<div> ProductName: {{ProductName}} </div>
+
+<div ng-repeat="item in productDetail.ProductImages">
+    <ul>              
+        <li>
+            <a href="#">
+                <img src="http://staging.sirez.com/babyhugzshopping/BhzImages/Products/small/{{item.Imagename}}" alt="{{item.Imagename}}" />
+            </a>
+        </li>
+    </ul>
+    <h1>ProductDescription</h1>
+    <div>{{ProductDescription}} </div><br /><br /><br />
+
+</div>

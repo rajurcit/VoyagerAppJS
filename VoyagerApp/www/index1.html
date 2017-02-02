@@ -6,22 +6,32 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
     <!-- SPELLS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="Contents/scripts/angular.min.js"></script>
+    <script src="Contents/scripts/angular-route.min.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>-->
 
     <script src="Contents/scripts/script.js"></script>
     <script src="Contents/scripts/aboutCtrl.js"></script>
+    <script src="Contents/scripts/DetailsCtrl.js"></script>
+    <script src="Contents/scripts/HomeProductCtrl.js"></script>
+    <script src="Contents/scripts/CalculatorService.js"></script>
 </head>
 <!-- define angular controller -->
 <body ng-controller="mainController">
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="Home.html">Angular Routing Example</a>
+                <a class="navbar-brand text-center" href="http://staging.sirez.com/babyhugzshopping/">
+                    Babyhugz.com
+                </a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#About"><i class="fa fa-shield"></i> About</a></li>
+                <li><a href="#About"><i class="fa fa-shield"></i> NEW PRODUCTS</a></li>
+                <li><a href="#HotProduct"><i class="fa fa-shield"></i> Hot Product.html</a></li>
+                <li><a href="#ARRIVALS"><i class="fa fa-shield"></i> NEW ARRIVALS</a></li>
+                <li><a href="Home.html"><i class="fa fa-comment"></i> CRUD</a></li>
                 <li><a href="#Contact"><i class="fa fa-comment"></i> Contact</a></li>
             </ul>
         </div>
@@ -32,8 +42,8 @@
         <div ng-view></div>
     </div>
     <footer class="text-center">
-        <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
-        <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p>
+        
+        <p>Copyright © 2015 Babyhugz.com - All rights Reserved</p>
     </footer>
 
 </body>

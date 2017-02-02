@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="Contents/scripts/platformOverrides.js"></script>
+    <script src="Contents/scripts/angular.min.js"></script>
+    <script src="Contents/scripts/angular-route.min.js"></script>
+    <script src="Contents/scripts/GetNewProductListCtrl.js"></script>
+    <script src="Contents/scripts/ProductServices.js"></script>
+</head>
+<body ng-app="myApp">
+    <div>Content goes here.</div>
+
+    <div class="container" ng-controller="productCtrl">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="Home.html">Angular Routing Example</a>
+        </div>
+         <div><input type="button" ng-click="GetNewProductList()" value="Submit" /></div>
+    </div>
+</body>
+</html>

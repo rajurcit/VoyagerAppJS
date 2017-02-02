@@ -1,22 +1,24 @@
 ﻿var CalculatorService = angular.module('CalculatorService', [])
-    
-.service('Calculator', function () {
-    this.square = function (a)
-    {
-        return a * a
+
+.service('Calculator', function ($http) {
+    this.square = function () {
+        var data = $http({
+            method: 'GET',
+            url: 'http://staging.sirez.com/babyhugzservice/ProductApi.svc/GetNewProductList'
+        }).then(function successCallback(response) {
+            var data = response.data;
+        }, function errorCallback(response) {
+
+        });
+        return data;
     };
 
     this.add = function (a) {
         return a + a
     };
     this.root = function (a) {
-        return a * a*a
-    };
-})
-
-.factory('CarFactory', function () {
-    return function (numCylinder) {
-        this.dealer = "Bad";
-        this.numCylinder = numCylinder
+        return a * a * a
     };
 });
+
+ 

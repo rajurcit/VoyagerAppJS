@@ -1,10 +1,9 @@
 ﻿// create the module and name it scotchApp
-var scotchApp = angular.module('scotchApp', ['ngRoute']);
+var scotchApp = angular.module('scotchApp', ['ngRoute'] );
 
 // configure our routes
 scotchApp.config(function ($routeProvider) {
     $routeProvider
-
         // route for the home page
         .when('/', {
             templateUrl: 'Templates/Home.html',
@@ -17,6 +16,18 @@ scotchApp.config(function ($routeProvider) {
             controller: 'aboutController'
         })
 
+        .when('/ProductDeatils/:id', {
+            templateUrl: 'Templates/ProductDeatils.html',
+            controller: 'DetailsController'
+        })
+        .when('/ARRIVALS', {
+            templateUrl: 'Templates/ARRIVALS.html',
+            controller: 'mainController'
+        })
+         .when('/HotProduct', {
+             templateUrl: 'Templates/HotProduct.html',
+             controller: 'mainController'
+         })
         // route for the contact page
         .when('/Contact', {
             templateUrl: 'Templates/Contact.html',
@@ -25,10 +36,10 @@ scotchApp.config(function ($routeProvider) {
 });
 
 // create the controller and inject Angular's $scope
-scotchApp.controller('mainController', function ($scope) {
-    // create a message to display in our view
-    $scope.message = 'Everyone come and see how good I look!';
-});
+//scotchApp.controller('mainController', function ($scope) {
+//    // create a message to display in our view
+//    $scope.message = 'Everyone come and see how good I look!';
+//});
 
 
 

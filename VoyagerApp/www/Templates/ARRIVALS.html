@@ -1,0 +1,12 @@
+﻿<h1>New ArrivalProducts</h1>
+<div ng-repeat="ProductList in GetHomeProductList.NewArrivalProducts">
+    <ul>
+        <li>
+            ID: {{ProductList.ProductId}}<br />
+            ProductName: {{ProductList.ProductName}}<br />
+            <a href="#/ProductDeatils/{{ProductList.ProductId}}">
+                <img src="http://staging.sirez.com/babyhugzshopping/BhzImages/Products/small/{{ProductList.ProductImage}}" alt="{{ProductList.ProductImage}}" />
+            </a>
+        </li>
+    </ul>
+</div> 
