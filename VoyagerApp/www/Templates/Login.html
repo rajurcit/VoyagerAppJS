@@ -1,0 +1,18 @@
+﻿
+<div class="container">
+    <form name="Myuser" novalidate class="simple-form">
+        <label>UserID: <input type="text" class="form-control" ng-model="user.name" /></label><br />
+        <span ng-show="Myuser.user.name.$touched && Myuser.user.name.$invalid">The userId is required.</span>
+        <label>password:  <input type="password" class="form-control" ng-model="user.password" /></label>{{user.password}}<br />
+
+        <!--Gender: <label><input type="radio" ng-model="user.gender" value="male" />male</label>
+        <label><input type="radio" ng-model="user.gender" value="female" />female</label><br />-->
+        <!--<button ng-click="Login(user)">Login</button><br />-->
+        <label ng-show="lblmessage" style="color:red">{{Errorlogin}}</label><br />
+
+        <button style="text-align:center" class="btn btn-success" ng-click="goDelete(user)">Login</button><br />  <br />       
+    </form>
+    
+    <div ng-show="divloginData" id="divtbl"></div>
+
+</div>

@@ -5,16 +5,56 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
     <link href="Contents/css/index.css" rel="stylesheet" />
+    
+
+</head>
+<body class="container">
+    <h1>My first App</h1>
+    <a href="index1.html"><i class="fa fa-home"></i> Home</a> <br /><br />
+    <div id="divuserid"></div>
+
+    <div id="qrpopup">
+        <hr />
+        <input type="text" inputmode="latin-name" id="editNameBox"><br />
+        <input type="text" id="editNumberBox"><br>
+        <button onclick="goDelete()">Delete</button>
+        <button onclick="goEdit()">Edit</button>
+        <button onclick="document.getElementById('qrpopup').style.display='none';">Discard</button>
+    </div>
+    <div>
+        Name : <input type="text" class="form-control" value="" id="txtName"><br /><br />
+        Password : <input class="form-control" type="text" value="" id="txtNumber"><br />
+        <button class="btn btn-success center" onclick="goInsert()">Insert</button><br /><br />
+    </div>
+    <div id="tblDiv"></div>
+    <div style="text-align: center">       
+        <button onclick="goSearch()">Search</button>
+        <button onclick="successCB()">Show All</button>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="Contents/scripts/platformOverrides.js"></script>
+
+    <script src="Contents/scripts/angular.min.js"></script>
+    <script src="Contents/scripts/angular-route.min.js"></script>
+    <!--<script src="Contents/scripts/AddDb.js"></script>-->
     <script type="text/javascript" charset="utf-8">
         // Wait for Cordova to load
-        //
+
         document.addEventListener("deviceready", onDeviceReady, false);
 
         var currentRow;
         // Populate the database
         //
+        var userID = "";
+        if (localStorage.getItem('userID')) {
+            
+            userID = '<p>Welcome ' + localStorage.getItem('userID') + '</p>';
+            document.getElementById("divuserid").innerHTML = userID;
+        }
+        else {  }
         function populateDB(tx) {
-             
+
             tx.executeSql('CREATE TABLE IF NOT EXISTS DEMODB (id INTEGER PRIMARY KEY AUTOINCREMENT, name,number)');
         }
 
@@ -71,13 +111,13 @@
         //Insert query
         //
         function insertDB(tx) {
-        
+
             tx.executeSql('INSERT INTO DEMODB (name,number) VALUES ("' + document.getElementById("txtName").value
                     + '","' + document.getElementById("txtNumber").value + '")');
         }
 
         function goInsert() {
-             
+
             var db = window.openDatabase("Database", "1.0", "VoyagerApp", 200000);
             db.transaction(insertDB, errorCB, successCB);
         }
@@ -114,38 +154,5 @@
         }
 
     </script>
-
-</head>
-<body>
-    <h1>My first App</h1>
-     <a href="index1.html"><i class="fa fa-home"></i> Home</a> <br /><br />
-    <p>Open Database</p>
-    <div id="qrpopup">
-
-        <hr />
-        <input type="text" inputmode="latin-name" id="editNameBox"><br />
-        <input type="text" id="editNumberBox"><br>
-        <button onclick="goDelete()">Delete</button>
-        <button onclick="goEdit()">Edit</button>
-        <button onclick="document.getElementById('qrpopup').style.display='none';">Discard</button>
-    </div>
-
-    <div>
-        Name : <input type="text" value="Name" id="txtName"><br /><br />
-        Password : <input type="text" value="123" id="txtNumber"><hr />
-    </div>
-    <div id="tblDiv"></div>
-    <div style="text-align: center">
-        <button onclick="goInsert()">Insert</button>
-        <button onclick="goSearch()">Search</button>
-        <button onclick="successCB()">Show All</button>
-    </div>
-
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="Contents/scripts/platformOverrides.js"></script>
-
-    <script src="Contents/scripts/angular.min.js"></script>
-    <script src="Contents/scripts/angular-route.min.js"></script>
-    <!--<script src="Contents/scripts/AddDb.js"></script>-->
 </body>
 </html>

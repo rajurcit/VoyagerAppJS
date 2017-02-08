@@ -1,5 +1,4 @@
 ﻿var CalculatorService = angular.module('CalculatorService', [])
-
 .service('Calculator', function ($http) {
     this.square = function () {
         var data = $http({

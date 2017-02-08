@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
     <!-- SPELLS -->
     <script src="Contents/scripts/angular.min.js"></script>
-    <script src="Contents/scripts/angular-route.min.js"></script>
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>-->
+    <script src="Contents/scripts/angular-route.min.js"></script>  
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <script src="Contents/scripts/script.js"></script>
     <script src="Contents/scripts/aboutCtrl.js"></script>
     <script src="Contents/scripts/DetailsCtrl.js"></script>
     <script src="Contents/scripts/HomeProductCtrl.js"></script>
     <script src="Contents/scripts/CalculatorService.js"></script>
+    <script src="Contents/scripts/appendJS.js"></script>
+    <script src="Contents/scripts/Login.js"></script>
+    <script src="Contents/scripts/signup.js"></script>
+    
 </head>
 <!-- define angular controller -->
 <body ng-controller="mainController">
@@ -24,16 +28,26 @@
             <div class="navbar-header">
                 <a class="navbar-brand text-center" href="http://staging.sirez.com/babyhugzshopping/">
                     Babyhugz.com
-                </a>
+                </a>               
             </div>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-left">
                 <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
                 <li><a href="#About"><i class="fa fa-shield"></i> NEW PRODUCTS</a></li>
                 <li><a href="#HotProduct"><i class="fa fa-shield"></i> Hot Product.html</a></li>
                 <li><a href="#ARRIVALS"><i class="fa fa-shield"></i> NEW ARRIVALS</a></li>
                 <li><a href="Home.html"><i class="fa fa-comment"></i> CRUD</a></li>
                 <li><a href="#Contact"><i class="fa fa-comment"></i> Contact</a></li>
+                <li><a href="#Login"><i class="fa fa-comment"></i> Login</a></li>
+                
+                <li><a href="#Signup"><i class="fa fa-comment"></i> Signup</a></li>
+                <!--<li><a  href="#Test"><i class="fa fa-comment"></i> Test_Append</a></li>-->
             </ul>
+            <div id="divuser" style="display:block">
+                <div style="color:green;" id="divuserid">
+                </div>
+                <button type="button" class="fa fa-comment" id="hide" onclick="logout()">logout</button>  
+            </div>
+                   
         </div>
     </nav>
     <div id="main">
@@ -45,6 +59,21 @@
         
         <p>Copyright © 2015 Babyhugz.com - All rights Reserved</p>
     </footer>
-
+    <script>
+        var userID = "";
+        if (localStorage.getItem('userID')) {
+             
+            userID = '<p>Welcome ' + localStorage.getItem('userID') + '</p>';
+            document.getElementById("divuserid").innerHTML = userID;
+        }
+        else { document.getElementById("divuser").style.visibility = "hidden"; }
+        function logout($rootScope)
+        {
+           
+            window.localStorage.setItem("userID", "");
+            document.getElementById("divuserid").innerHTML = userID;
+            document.getElementById("divuser").style.visibility = "hidden";
+        }
+    </script>
 </body>
 </html>

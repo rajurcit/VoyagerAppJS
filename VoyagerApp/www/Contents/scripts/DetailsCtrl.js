@@ -10,6 +10,7 @@
            // params: { id: $routeParams.id }
         }).then(function successCallback(response) {            
             $scope.productDetail = response.data.ResultData;
+
             $scope.ProductName = $scope.productDetail.ProductDetails.ProductName
             $scope.SalePrice = $scope.productDetail.ProductDetails.SalePrice
             $scope.ProductId = $scope.productDetail.ProductDetails.ProductId

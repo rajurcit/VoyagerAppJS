@@ -1,0 +1,26 @@
+﻿<form name="myForm" ng-submit="insert(user)" class="container">
+    First Name:<br>
+    <input class="form-control" type="text" ng-model="user.firstName" required>
+    <!--<span ng-show="myForm.user.firstName.$touched && myForm.user.firstName.$invalid">The name is required.</span>-->
+    <span ng-show="myForm.user.firstName.$error.required">Username is required....</span>
+    <br>
+    Last Name:<br>
+    <input class="form-control" type="text" ng-model="user.lastName" required>
+    <br>
+    MailId:<br>
+    <input class="form-control" type="email" ng-model="user.mailid" required>
+    <span ng-show="myForm.user.mailid.$error.email">Please, write a valid email address.</span><br />
+    Password:<br>
+    <input class="form-control" type="text" ng-model="user.password" required> <br />
+    RePassword:<br>
+    <input class="form-control" type="password" match="user.password" ng-model="user.Repassword" required> <br />
+    Gender:<br />
+    <select class="form-control" ng-model="user.gender" ng-options="x for x in names" required></select>
+    <br><br>
+    <button class="btn btn-success center" type="submit">Signup</button>
+    <br><br>
+    <div id="divDetails"></div>
+    
+
+</form>
+
