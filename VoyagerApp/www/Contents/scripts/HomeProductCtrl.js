@@ -8,6 +8,7 @@
             url: 'http://staging.sirez.com/babyhugzservice/ProductApi.svc/GetHomeProductList',
         }).then(function successCallback(response) {            
             $scope.GetHomeProductList = response.data.ResultData;
+            
         }, function errorCallback(response) {
             alert('Ohh Some error');
         });

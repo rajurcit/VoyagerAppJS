@@ -1,13 +1,11 @@
-﻿
-scotchApp.controller('loginCtrl', ['$scope', '$rootScope', '$http', '$routeParams', '$compile', '$window',
-  function ($scope, $rootScope, $http, $routeParams, $compile, $window) {
+﻿scotchApp.controller('loginCtrl', ['$scope', '$rootScope', '$http', '$routeParams', '$compile', '$window', '$location',
+  function ($scope, $rootScope, $http, $routeParams, $compile, $window, $location) {
       var name = ""
       var password = "";
       //document.addEventListener("deviceready", onDeviceReady, false);
-      
       $scope.Login = function (user) {
           name = user.name;
-          password = user.password;         
+          password = user.password;
       };
       $scope.Logout = function () {
           window.localStorage.setItem("userID", "");
@@ -24,7 +22,6 @@ scotchApp.controller('loginCtrl', ['$scope', '$rootScope', '$http', '$routeParam
           db.transaction(populateDB, errorCB, successCB);
       }
       function populateDB(tx) {
-
           tx.executeSql('CREATE TABLE IF NOT EXISTS DEMODB (id INTEGER PRIMARY KEY AUTOINCREMENT, name,number)');
       }
       function errorCB(err) {
@@ -61,20 +58,17 @@ scotchApp.controller('loginCtrl', ['$scope', '$rootScope', '$http', '$routeParam
               data = '<p>Welcome ' + localStorage.getItem('userID') + '!</p>';
               document.getElementById("divuserid").innerHTML = data;
               document.getElementById("divuser").style.visibility = "visible";
+              $location.path('/About');
           }
           else {
               window.localStorage.setItem("userID", name);
               $rootScope.divuser = true;
           }
-          //$cookieStore.put('userName', name);
+          // $cookieStore.put('userName', name);
           // $rootScope.loginUser= $cookieStore.get('userName')
           // $rootScope.loginUser = sessionStorage.getItem("userName");
-
       }
       function deleteRow(tx) {
           var data = tx.executeSql('select exists(SELECT 1 FROM DEMODB WHERE id = ' + password + ')', [], queryDB, errorCB);
-
       }
-
   }]);
-
