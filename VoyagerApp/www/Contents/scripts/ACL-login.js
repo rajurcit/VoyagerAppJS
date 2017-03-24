@@ -9,6 +9,7 @@ AclApp.controller('loginctrl', ['$scope', '$http', '$location', '$cookies', '$co
     
     $scope.mysearches = function () {
         $window.location.href = 'mysearches.html';
+
     }
     $scope.MyAccount = function () {
         debugger;
