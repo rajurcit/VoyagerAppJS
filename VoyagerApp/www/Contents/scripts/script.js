@@ -1,5 +1,5 @@
 ﻿// create the module and name it scotchApp
-var scotchApp = angular.module('scotchApp', ['ngRoute']);
+var scotchApp = angular.module('scotchApp', ['ngRoute', 'ngCookies', 'ngSanitize']);
 
 // configure our routes
 scotchApp.config(function ($routeProvider) {
@@ -20,6 +20,7 @@ scotchApp.config(function ($routeProvider) {
             templateUrl: 'Templates/ProductDeatils.html',
             controller: 'DetailsController'
         })
+
         .when('/ARRIVALS', {
             templateUrl: 'Templates/ARRIVALS.html',
             controller: 'mainController'
@@ -44,7 +45,20 @@ scotchApp.config(function ($routeProvider) {
     .when('/Signup', {
         templateUrl: 'Templates/Signup.html',
         controller: 'signupCtrl'
+    })
+    .when('/table', {
+        templateUrl: 'Templates/table.html'
+        // controller: 'signupCtrl'
+    })
+         .when('/table', {
+             templateUrl: 'Templates/table.html'
+             // controller: 'signupCtrl'
+         })
+    .when('/voyagerAPI', {
+        templateUrl: 'Templates/voyagerAPI.html',
+        controller: 'voyagerAPICtrl'
     });
+     
 });
 
 scotchApp.controller('contactController', function ($scope) {

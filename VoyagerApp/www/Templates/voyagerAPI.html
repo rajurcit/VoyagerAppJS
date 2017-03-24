@@ -1,0 +1,12 @@
+﻿ 
+    <div>Content goes here.</div>
+<div>    
+    <input type="button" value="Login" ng-click="login()" /><br />
+    <span ng-bind-html="div"></span>  
+    <span ng-bind-html="Message"></span><br />
+    <span ng-bind-html="DivContents"></span>
+</div>
+    <div ng-repeat="item in holdingData.holdings.institution.holding">
+        <p>{{item.item.itemData}}</p>
+    </div>
+ 
